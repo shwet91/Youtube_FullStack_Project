@@ -1,6 +1,6 @@
 
 
-const server = "https://youtubebackend-pi.vercel.app/api/v1"
+const server = "https://youtube-fullstack-project.onrender.com/api/v1"
 // const server = "https://youtube-full-stack-project-six.vercel.app/api/v1"
 
 
