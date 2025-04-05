@@ -8,9 +8,9 @@ const app = express();
 
 
 app.use(cors({
-  // origin: process.env.CORS_ORIGIN,
+  origin: process.env.CORS_ORIGIN,
     // origin :"http://localhost:5173", // again crucial part
-    origin : "https://youtube-full-stack-project-r8sc.vercel.app",
+    // origin : "https://youtube-full-stack-project-r8sc.vercel.app",
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE' , 'PATCH'],
     allowedHeaders: [

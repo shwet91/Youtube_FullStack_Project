@@ -1,7 +1,7 @@
 
 
-// const server = "http://localhost:8000/api/v1"
-const server = "https://youtube-full-stack-project-six.vercel.app/api/v1"
+const server = "http://localhost:8000/api/v1"
+// const server = "https://youtube-full-stack-project-six.vercel.app/api/v1"
 
 
 export default {
