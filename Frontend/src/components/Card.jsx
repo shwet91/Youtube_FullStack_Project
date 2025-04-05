@@ -22,14 +22,14 @@ const VideoCard = ({
   }
 
   return (
-    <div className="w-1/5 h-1/4  bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"  onClick={onClick}  >
+    <div className="sm:w-80 bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"  onClick={onClick}  >
       {/* Thumbnail with duration */}
-      <div className="relative h-1/4  ">
+      <div className=" overflow-hidden bg-cover relative h-48  ">
         <img 
            src={thumbnail} 
           // src='https://images.unsplash.com/photo-1742943679521-f4736500a471?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8'
           alt={title}
-          className="w-full object-cover"
+          className="w-full absolute inset-0 h-full object-cover"
         />
         <div className="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-sm font-medium px-2 py-1 rounded">
           <span className="flex items-center gap-1">
@@ -54,7 +54,7 @@ const VideoCard = ({
           
           {/* Video details */}
           <div className="flex-1">
-            <h3 className="text-white font-medium line-clamp-2 text-m">
+            <h3 className="text-white h-16 font-medium line-clamp-2 text-m">
               {title}
             </h3>
             <p className="text-gray-400 text-sm m-0">

@@ -3,6 +3,7 @@ import VideoCard from '@/components/Card'
 import { useState } from 'react'
 import { simpleFetch } from '@/backend/simpleFetch'
 import api from '@/backend/api'
+import { Icons } from "@/components/Icons.jsx"
 
 function Home() {
 
@@ -90,10 +91,15 @@ useEffect(() => {
         })
       }
   </div>
+  <div className=' flex justify-center '>
+    {
+      loading ? <Icons.spinner className="mr-2 h-10 w-10 animate-spin" /> : null
+    }
+
+  </div>
 
 
-
-      </div>
+  </div>
   )
 }
 

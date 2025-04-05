@@ -8,6 +8,7 @@ import ChannelVideos from '@/components/VideoSection/ChannelVideos'
 import Logout from '@/components/Auth/Logout'
 import { useNavigate } from 'react-router-dom'
 import UserCard from '@/components/UserCard'
+import { Icons } from "@/components/icons"
 
 
 function Test() {
@@ -107,6 +108,12 @@ function Test() {
       </p>
       <Store></Store>
       <Logout></Logout>
+      <div className='border '>
+      <Icons.spinner className="mr-2 h-10 w-10 animate-spin" />
+       
+      {/* <Icons.gitHub className="mr-2 h-4 w-4" /> */}
+      </div>
+  
       <div className=' border  ' >
         {/* <ChannelVideos videoData = {videoData} channelAvatar={userData.avatar} channelName={userData.fullName} ></ChannelVideos> */}
       </div>
