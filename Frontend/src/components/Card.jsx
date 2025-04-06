@@ -22,7 +22,7 @@ const VideoCard = ({
   }
 
   return (
-    <div className="sm:w-80 bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"  onClick={onClick}  >
+    <div className="sm:w-80 w-[80%] m-3 bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"  onClick={onClick}  >
       {/* Thumbnail with duration */}
       <div className=" overflow-hidden bg-cover relative h-48  ">
         <img 

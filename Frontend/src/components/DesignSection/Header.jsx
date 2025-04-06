@@ -47,7 +47,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gray-900 text-white sticky top-0 z-10 shadow-md w-full ">
+    <header className="bg-gray-900 text-white sticky top-0 z-10 shadow-md w-full  ">
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <SidebarTrigger></SidebarTrigger>

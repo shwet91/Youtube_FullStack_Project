@@ -70,7 +70,7 @@ useEffect(() => {
 
 
   return (
-    <div className='w-full h-full bg-slate-900 '>
+    <div className='w-full bg-slate-900 '>
       
     <div className="flex flex-wrap justify-between gap-4 ">
 
