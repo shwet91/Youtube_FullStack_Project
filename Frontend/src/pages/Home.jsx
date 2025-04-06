@@ -93,7 +93,7 @@ useEffect(() => {
   </div>
   <div className=' flex justify-center '>
     {
-      loading ? <Icons.spinner className="mr-2 h-10 w-10 animate-spin" /> : null
+      loading ? <Icons.spinner className="mr-2 h-10 w-10 animate-spin text-white" /> : null
     }
 
   </div>
