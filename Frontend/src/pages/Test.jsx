@@ -8,7 +8,7 @@ import ChannelVideos from '@/components/VideoSection/ChannelVideos'
 import Logout from '@/components/Auth/Logout'
 import { useNavigate } from 'react-router-dom'
 import UserCard from '@/components/UserCard'
-import { Icons } from "@/components/icons"
+import { Icons } from '@/components/Icons/Icons.jsx'
 
 
 function Test() {
