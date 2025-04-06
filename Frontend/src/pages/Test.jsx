@@ -8,7 +8,7 @@ import ChannelVideos from '@/components/VideoSection/ChannelVideos'
 import Logout from '@/components/Auth/Logout'
 import { useNavigate } from 'react-router-dom'
 import UserCard from '@/components/UserCard'
-import { Icons } from '@/components/Icons/Icons.jsx'
+// import { Icons } from '@/components/Icons/Icons.jsx'
 
 
 function Test() {
@@ -109,7 +109,7 @@ function Test() {
       <Store></Store>
       <Logout></Logout>
       <div className='border '>
-      <Icons.spinner className="mr-2 h-10 w-10 animate-spin" />
+      {/* <Icons.spinner className="mr-2 h-10 w-10 animate-spin" /> */}
        
       {/* <Icons.gitHub className="mr-2 h-4 w-4" /> */}
       </div>
