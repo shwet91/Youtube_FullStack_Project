@@ -93,7 +93,7 @@ function VideoChannelSection() {
 
   const toggleSubscribe = async () => {
     if(!isLoggedIn){
-      return   toast(`Login to Like`)
+      return   toast(`Login to Subscribe`)
     }
 
     const toggleSubscription = await simpleFetch({
