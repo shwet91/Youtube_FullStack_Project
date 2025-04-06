@@ -17,6 +17,7 @@ function ChannelVideos({ videoData = {} , channelAvatar ="" , channelName = "" }
          uploadedAt={e.createdAt}
          channelAvatar={channelAvatar}
          channelName={channelName}
+         videoId={e._id}
           ></VideoCard> )
      }
 

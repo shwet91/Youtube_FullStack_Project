@@ -16,6 +16,8 @@ function Logout() {
     const logoutHandler = async() => {
       if (loading) return; // Prevent duplicate requests
       setLoading(true);
+      dispatch(logout())
+
 
 
         const response = await simpleFetch({

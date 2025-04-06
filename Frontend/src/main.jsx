@@ -14,6 +14,7 @@ import Test from './pages/Test'
 import EditVideoPage from './pages/EditVideoPage'
 import UploadVideo from './pages/Test2'
 import SearchResult from './pages/SearchResult'
+import OthersProfile from './pages/othersProfile'
 
 import { persistor} from "./store/store"
 import { PersistGate } from 'redux-persist/integration/react'
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/searchResult",
         element: <SearchResult></SearchResult>
+      },
+      {
+        path: "/othersProfile/:userId",
+        element: <OthersProfile></OthersProfile>
       }
     ]
   },

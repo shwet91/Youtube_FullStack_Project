@@ -24,7 +24,7 @@ router.route("/getWatchHistory/:userId").post(getWatchHistory)
 router
     .route("/")
     .get()
-    .post(
+    .post( verifyJWT ,
         upload.fields([
             {
                 name: "videoFile",

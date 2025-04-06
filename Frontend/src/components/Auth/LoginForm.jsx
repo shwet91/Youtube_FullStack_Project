@@ -46,7 +46,7 @@ function LoginForm() {
       async function onSubmit(values) {
         if (loading) return; // Prevent duplicate requests
         setLoading(true);
-
+         console.log(values)
         try {
           const response = await simpleFetch({
             method: 'POST',

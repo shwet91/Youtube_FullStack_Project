@@ -21,6 +21,7 @@ import { Input } from "@/components/ui/input"
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Icons } from '../Icons/Icons'
+import { toast } from 'sonner'
 
 
 
@@ -38,14 +39,15 @@ function SignupForm() {
          username: z.string().min(3).max(50),
 
          email: z.string().min(3).max(50),
+         password: z.string()
 
       })
       
       const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
-          fullName: "123",
-          username: "123",
+          fullName: "",
+          username: "",
            password: "",
         },
       })
@@ -54,14 +56,15 @@ function SignupForm() {
     async function onSubmit(values ) {
       if (loading) return; // Prevent duplicate requests
       setLoading(true);
-      console.log(form.getValues("coverImage"))
+      console.log("this is password :" , values)
+      console.log( "this is cover image" , form.getValues("coverImage"))
       const formData = new FormData()
       formData.append("username" , values.username)
       formData.append("fullName" , values.fullName)
       formData.append("email" , values.email)
       formData.append("password" , values.password)
       formData.append("avatar" , form.getValues("avatar"))
-      formData.append("coverImage" , form.getValues("CoverImage"))
+      formData.append("coverImage" , form.getValues("coverImage"))
 
 
     const response  = await formFetch({
@@ -73,7 +76,7 @@ function SignupForm() {
       dispatch(login({
         data : response.data
       }))
-
+      toast("User created")
       console.log(response)
       setLoading(false);
 

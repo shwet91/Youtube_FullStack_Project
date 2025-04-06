@@ -15,9 +15,14 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { simpleFetch } from '@/backend/simpleFetch'
+import { toast } from 'sonner'
+import { Icons } from '../Icons/Icons.jsx'
+import { useState } from 'react'
 
 
 function UploadVideo() {
+
+   const [loading , setLoading] = useState(false)
   
     const formSchema = z.object({
      description: z.string().min().max(50),
@@ -41,6 +46,9 @@ function UploadVideo() {
 
 
     async function onSubmit(values ) {
+      if (loading) return; // Prevent duplicate requests
+        setLoading(true);
+
       console.log("worked")
       const formData = new FormData()
       formData.append("title" , values.title)
@@ -60,6 +68,8 @@ function UploadVideo() {
     })
 
       console.log(response)
+      setLoading(false)
+      toast("video Uploaded")
       }
 
       return (
@@ -141,7 +151,6 @@ function UploadVideo() {
       <FormControl>
         <Input
           type="file" className="text-gray-500 file:text-white"
-          accept="image/*"
           onChange={(event) => {
             field.onChange(event.target.files?.[0]); // Capture the file
           }}
@@ -182,6 +191,13 @@ function UploadVideo() {
 
       <Button className="sm:top-8 relative bg-rose-800 hover:bg-rose-950" type="submit" >Upload Video</Button>
     </form>
+
+    <div className=' flex justify-center h-28 '>
+            {
+              loading ? <Icons.spinner className="mr-2 h-10 w-10 animate-spin text-white" /> : null
+            }
+        
+          </div>
   </Form>
   )
 }

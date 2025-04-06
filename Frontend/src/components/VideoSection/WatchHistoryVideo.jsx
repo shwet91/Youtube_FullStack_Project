@@ -17,6 +17,7 @@ function WatchHistory({ videoData = {} }) {
          uploadedAt={e.createdAt}
          channelAvatar={e.avatar}
          channelName={e.channelName}
+         videoId={e._id}
           ></VideoCard> )
      }
 

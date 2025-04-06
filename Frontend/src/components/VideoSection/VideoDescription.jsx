@@ -128,6 +128,12 @@ function VideoChannelSection() {
     }
   }
 
+  const profileClickHandler = () => {
+    if(owner._id !== userData._id){
+      navigate(`/othersProfile/${owner._id}`)
+    }
+  }
+
 
   return (
     <div className='w-full bg-slate-800'>
@@ -136,9 +142,9 @@ function VideoChannelSection() {
       <div className='p-4 sm:p-5'>
         <div className='flex flex-col sm:flex-row relative w-full items-center justify-between gap-4'>
           {/* Channel section */}
-          <div className='flex items-center space-x-4 sm:space-x-6 w-full'>
+          <div  className='flex items-center border p-5 rounded-lg space-x-4 sm:space-x-6 w-full'>
             {/* Profile Image */}
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0">
+            <div onClick={profileClickHandler} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0">
               <img 
                 src={owner.avatar}
              // src="https://images.unsplash.com/photo-1741851374411-9528e6d2f33f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzMnx8fGVufDB8fHx8fA%3D%3D" 
@@ -148,7 +154,7 @@ function VideoChannelSection() {
             </div>
 
             {/* Channel Info */}
-            <div className='flex-grow'>
+            <div onClick={profileClickHandler} className='flex-grow'>
               <p className='text-white text-sm sm:text-base'>{owner.fullName}</p>
               <p className='text-white text-xs sm:text-sm opacity-70'>{ownerStats.totalSubscribers} Subscribers</p>
               {/* <button className="bg-rose-800 text-white text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 rounded hover:bg-rose-700 transition-colors">
