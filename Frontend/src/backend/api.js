@@ -1,7 +1,7 @@
 
 
-const server = "https://youtube-fullstack-project.onrender.com/api/v1"
-// const server = "http://localhost:8000/api/v1"
+// const server = "https://youtube-fullstack-project.onrender.com/api/v1"
+const server = "http://localhost:8000/api/v1"
 
 
 export default {
