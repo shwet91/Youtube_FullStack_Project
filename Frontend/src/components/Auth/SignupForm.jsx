@@ -5,6 +5,7 @@ import { z } from "zod"
 import api from '@/backend/api'
 import { formFetch } from '@/backend/formFetch'
 import { login } from '@/store/authSlice'
+import { useState } from 'react'
 
 import { Button } from "@/components/ui/button"
 import {
@@ -19,6 +20,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { Icons } from '../Icons/Icons'
 
 
 
@@ -28,6 +30,7 @@ function SignupForm() {
 
      const dispatch = useDispatch()  
      const navigate = useNavigate()
+      const [loading , setLoading] = useState(false)
 
     const formSchema = z.object({
       fullName: z.string().min(3).max(50),
@@ -49,6 +52,8 @@ function SignupForm() {
 
 
     async function onSubmit(values ) {
+      if (loading) return; // Prevent duplicate requests
+      setLoading(true);
       console.log(form.getValues("coverImage"))
       const formData = new FormData()
       formData.append("username" , values.username)
@@ -70,6 +75,7 @@ function SignupForm() {
       }))
 
       console.log(response)
+      setLoading(false);
 
       }
 
@@ -225,6 +231,12 @@ function SignupForm() {
     
     </form>
     <Button onClick={() => navigate("/login")} className={"sm:top-8 hover:bg-rose-950 bg-rose-900 relative "} >Login</Button>
+     <div className=' flex justify-center h-28 '>
+             {
+               loading ? <Icons.spinner className="mr-2 h-10 w-10 animate-spin text-white" /> : null
+             }
+         
+           </div>
   </Form>
    
   )

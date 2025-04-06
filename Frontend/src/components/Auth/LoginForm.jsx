@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { simpleFetch } from '@/backend/simpleFetch'
 import api from '@/backend/api'
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -19,12 +19,14 @@ import {
 import { Input } from "@/components/ui/input"
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { Icons } from '../Icons/Icons'
 
 
 
 function LoginForm() {
 
   const navigate = useNavigate()
+  const [loading , setLoading] = useState(false)
 
     const formSchema = z.object({
       email: z.string().min(3).max(50),
@@ -42,6 +44,9 @@ function LoginForm() {
       const dispatch = useDispatch()
 
       async function onSubmit(values) {
+        if (loading) return; // Prevent duplicate requests
+        setLoading(true);
+
         try {
           const response = await simpleFetch({
             method: 'POST',
@@ -63,6 +68,8 @@ function LoginForm() {
           navigate("/")
         } catch (error) {
           console.error('Login failed', error);
+        }  finally {
+          setLoading(false);
         }
       }
 
@@ -119,6 +126,13 @@ function LoginForm() {
     
     </form>
     <Button onClick={() => navigate("/signup")} className="sm:top-8 relative  hover:bg-rose-950 bg-rose-900"  type="submit">Sign up</Button>
+
+      <div className=' flex justify-center h-28 '>
+        {
+          loading ? <Icons.spinner className="mr-2 h-10 w-10 animate-spin text-white" /> : null
+        }
+    
+      </div>
   </Form>
   )
 }
