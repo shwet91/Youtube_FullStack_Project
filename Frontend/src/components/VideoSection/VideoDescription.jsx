@@ -161,6 +161,9 @@ function VideoChannelSection() {
               Subscribe
               </button> */}
             </div>
+            <div onClick={profileClickHandler} className='flex-grow'>
+              <p className='text-white text-xs sm:text-sm opacity-70'>Total Views : {videoData.views} </p>
+            </div>
 
             {/* Buttons Container */}
             {/* <div className='flex items-center space-x-2 sm:space-x-4'>
